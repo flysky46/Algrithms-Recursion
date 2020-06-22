@@ -1,0 +1,29 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int FindFactorialusingRecursion(int num)
+{
+    if (num == 0 || num == 1)
+        return 1;
+    else
+        return num * FindFactorialusingRecursion(num - 1);
+}
+
+int FindFactorialusingForLoop(int num)
+{
+    int result = 1;
+    for (int i = 0; i < num; i++)
+        result *= (i + 1);
+    return result;
+}
+
+int main()
+{
+	int V = 0;
+	V = FindFactorialusingRecursion(5);
+	cout<<"FindFactorialusingRecursion: "<<V<<endl;
+	V = FindFactorialusingForLoop(5);
+	cout<<"FindFactorialusingForLoop: "<<V;
+	return 0;
+}
