@@ -1,0 +1,21 @@
+#include <iostream> 
+#include <string> 
+using namespace std; 
+
+
+string reverseString(string s)
+{
+    if(s == "" || s.size() == 1)
+        return s;
+
+    string temp = s;
+    temp.erase(0, 1);
+    temp.erase(s.size() - 2, 1);
+    return s[s.length() - 1] + reverseString(temp) + s[0];
+}
+
+int main()
+{
+	cout<<reverseString("yoyo mastery");
+	return 0;
+}
